@@ -1,0 +1,12 @@
+@()
+@main("Questão 2"){
+    <form action="@controllers.routes.HomeController.inserirProduto()" method="post">
+        <label for="Nome">Nome do Produto:</label>
+        <input type="text" name="nome" placeholder="Digite o nome do produto">
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="text" name="quantidade" placeholder="Digite a quantidade do produto">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+}

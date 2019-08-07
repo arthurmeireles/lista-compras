@@ -1,0 +1,20 @@
+@(lista : List[Produto])
+
+@main("Lista de Compras"){
+
+    <h2>Lista de compras</h2>
+    <ul>
+        @for(produto <- lista){
+            <li>
+                <p>@produto.getNome</p>
+                <p>@produto.getQuantidade</p> 
+
+                <a href="@controllers.routes.HomeController.incrementar(lista.indexOf(produto))" style="margin: 0px 30px;"> Incrementar quantidade </a>
+                <a href="@controllers.routes.HomeController.decrementar(lista.indexOf(produto))" style="margin: 0px 30px;;"> Diminuir  quantidade</a>
+                <a href="@controllers.routes.HomeController.remover(lista.indexOf(produto))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+            </li> 
+        }
+    </ul>
+    <br>
+    <a href="/inserir">Clique para inserir produto</a>
+}
